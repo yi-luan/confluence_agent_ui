@@ -1,11 +1,16 @@
 import { Box, Flex, Stack } from '@chakra-ui/react';
+import { useEffect } from 'react';
 import { BottomSection } from './bottom-section';
 import { MiddleSection } from './middle-section';
 import { Sidebar } from './sidebar';
 import { SidebarProvider } from './sidebar-context';
 import { TopSection } from './top-section';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    document.title = 'Confluence AI';
+  }, []);
+
   return (
     <SidebarProvider>
       <Flex minH='100dvh'>
@@ -21,6 +26,6 @@ function App() {
       </Flex>
     </SidebarProvider>
   );
-}
+};
 
 export default App;
