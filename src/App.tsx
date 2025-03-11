@@ -5,6 +5,7 @@ import { MiddleSection } from './middle-section';
 import { Sidebar } from './sidebar';
 import { SidebarProvider } from './sidebar-context';
 import { TopSection } from './top-section';
+import { ConversationProvider } from './context/conversation-context';
 
 const App = () => {
   useEffect(() => {
@@ -12,19 +13,21 @@ const App = () => {
   }, []);
 
   return (
-    <SidebarProvider>
-      <Flex minH='100dvh'>
-        <Sidebar />
+    <ConversationProvider>
+      <SidebarProvider>
+        <Flex minH='100dvh'>
+          <Sidebar />
 
-        <Box flex='1'>
-          <Stack h='full'>
-            <TopSection />
-            <MiddleSection />
-            <BottomSection />
-          </Stack>
-        </Box>
-      </Flex>
-    </SidebarProvider>
+          <Box flex='1'>
+            <Stack h='full'>
+              <TopSection />
+              <MiddleSection />
+              <BottomSection />
+            </Stack>
+          </Box>
+        </Flex>
+      </SidebarProvider>
+    </ConversationProvider>
   );
 };
 

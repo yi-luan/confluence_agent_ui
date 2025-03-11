@@ -1,11 +1,9 @@
-import { Box, Center } from '@chakra-ui/react';
-
 export function BottomSection() {
   return (
-    <Box pb='2'>
-      <Center fontSize='xs' color='fg.muted'>
+    <div className='py-3 px-4 bg-white border-t border-gray-200'>
+      <div className='text-center text-xs text-gray-500'>
         Confluence AI can make mistakes. Check important info.
-      </Center>
-    </Box>
+      </div>
+    </div>
   );
 }
