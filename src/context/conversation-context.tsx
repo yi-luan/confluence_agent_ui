@@ -1,3 +1,4 @@
+import { API_CONFIG } from '@/config/api';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface Conversation {
@@ -52,7 +53,7 @@ export function ConversationProvider({ children }: { children: React.ReactNode }
 
   const refreshConversations = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/conversations');
+      const response = await fetch(`${API_CONFIG.BASE_URL}/api/conversations`);
       const data = await response.json();
       setConversations(data.data.conversations);
     } catch (error) {
@@ -62,7 +63,7 @@ export function ConversationProvider({ children }: { children: React.ReactNode }
 
   const loadConversationMessages = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/conversations/${id}`);
+      const response = await fetch(`${API_CONFIG.BASE_URL}/api/conversations/${id}`);
       const data = await response.json();
       setCurrentMessages(data.data.messages);
     } catch (error) {

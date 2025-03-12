@@ -7,7 +7,7 @@ import { SidebarProvider } from './sidebar-context';
 import { TopSection } from './top-section';
 import { ConversationProvider } from './context/conversation-context';
 
-const App = () => {
+export default function App() {
   useEffect(() => {
     document.title = 'Confluence AI';
   }, []);
@@ -15,10 +15,9 @@ const App = () => {
   return (
     <ConversationProvider>
       <SidebarProvider>
-        <Flex minH='100dvh'>
+        <Flex minH='100dvh' bg='#343541' position='relative'>
           <Sidebar />
-
-          <Box flex='1'>
+          <Box flex='1' minW={0}>
             <Stack h='full'>
               <TopSection />
               <MiddleSection />
@@ -29,6 +28,4 @@ const App = () => {
       </SidebarProvider>
     </ConversationProvider>
   );
-};
-
-export default App;
+}

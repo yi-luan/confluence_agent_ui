@@ -1,0 +1,9 @@
+version: "2"
+authtoken: 2uCKwEZHcdamizM8WmC705TzHzX_4V1uDjXyv8XdcJ38G5j4f
+tunnels:
+  app:
+    proto: http
+    addr: 5173
+  api:
+    proto: http
+    addr: 5001 
